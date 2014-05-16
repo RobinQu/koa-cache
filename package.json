@@ -1,0 +1,27 @@
+{
+  "name": "koa-cache",
+  "version": "0.1.0",
+  "description": "Redis cache for koa web service with policies",
+  "main": "lib/cache.js",
+  "scripts": {
+    "test": "mocha -R spec/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/RobinQu/koa-smart-cache.git"
+  },
+  "keywords": [
+    "cache",
+    "redis",
+    "koa"
+  ],
+  "author": "RobinQu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RobinQu/koa-smart-cache/issues"
+  },
+  "homepage": "https://github.com/RobinQu/koa-smart-cache",
+  "dependencies": {
+    "redis": "^0.10.1"
+  }
+}
