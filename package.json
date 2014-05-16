@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/RobinQu/koa-smart-cache",
   "dependencies": {
-    "redis": "^0.10.1"
+    "redis": "^0.10.1",
+    "redis-wstream": "^0.2.5"
   }
 }

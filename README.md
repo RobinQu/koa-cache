@@ -53,7 +53,7 @@ router.get("/users/:user", cache.all(), function*() {
   yield this.render("user", {});
   
   // after `this.body` is set
-  yield this.cache("users", this.params.user, this.user, 60 * 1000);
+  yield this.cache(["users", this.params.user], this.user, 60);
 });
 
 
@@ -76,7 +76,7 @@ router.update("/users/:user", function*() {
   // do some update
   update();
   // invalidate cache
-  yield this.invalidate("users", this.params.user);
+  yield this.invalidate(["users", this.params.user]);
 });
 
 ```
