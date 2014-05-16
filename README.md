@@ -2,6 +2,9 @@
 
 Redis Content Cache with polcies
 
+
+**WORKING IN PROGRESS**
+
 ## Notes about Redis
 
 ### LRU
@@ -32,7 +35,9 @@ var cache = require("koa-cache")({
   redis: {
     port: "your port",
     host: "your host",
-    auth: "auth code"
+    clientOptions: {
+      auth: "auth code"
+    }
   }
 });
 
@@ -53,13 +58,13 @@ router.get("/users/:user", cache.all(), function*() {
   yield this.render("user", {});
   
   // after `this.body` is set
-  yield this.cache(["users", this.params.user], this.user, 60);
+  this.cacheKey(["users", this.params.user]);
 });
 
 
 var match = cache.match(function*() {
   // do some match
-  if(this.request.body.uuid) {
+  if(this.request.body.uuid === "some value") {
     // return true to read from cache
     // using `this.req.url` as key
     retrun true;
