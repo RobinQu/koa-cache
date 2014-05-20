@@ -101,7 +101,7 @@ app.get("/data", cache.match(function*() {
 }), function*() {
   this.body = "private!";
   
-  // should use with cacheKey
+  // can be used with cacheKey
   this.cacheKey(this.session.user.name);
 });
 ```
