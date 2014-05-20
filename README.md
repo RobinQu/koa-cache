@@ -4,8 +4,6 @@ Redis Content Cache with polcies
 
 [![Build Status](https://travis-ci.org/RobinQu/koa-cache.svg)](https://travis-ci.org/RobinQu/koa-cache)
 
-**WORKING IN PROGRESS**
-
 ## Notes about Redis
 
 ### LRU
@@ -108,4 +106,4 @@ app.get("/data", cache.match(function*() {
 
 ## License
 
-See [./LICENSE](./LICENSE)
+See [LICENSE](./LICENSE)
