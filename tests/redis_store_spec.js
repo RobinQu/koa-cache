@@ -38,7 +38,7 @@ describe("RedisStore", function() {
       var ret;
       yield store.set(fixtures[0].key, fixtures[0].value, 1);
       //wait to expire
-      yield wait(1);
+      yield wait(1.5);
       ret = yield store.get(fixtures[0].key);
       expect(ret).not.to.be.ok;
     })(done);
