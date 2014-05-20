@@ -6,7 +6,7 @@ var co = require("co"),
 describe("RedisStore", function() {
   var wait = function(time) {
     return function(callback) {
-      setTimeout(callback, time);
+      setTimeout(callback, time*1000);
     };
   };
   
@@ -37,7 +37,7 @@ describe("RedisStore", function() {
       var ret;
       yield store.set(fixtures[0].key, fixtures[0].value, 1);
       //wait to expire
-      yield wait(10);
+      yield wait(1);
       ret = yield store.get(fixtures[0].key);
       expect(ret).not.to.be.ok;
     })(done);
