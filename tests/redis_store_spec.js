@@ -43,4 +43,22 @@ describe("RedisStore", function() {
     })(done);
   });
   
+  it("should touch to extend ttl", function(done) {
+    co(function*() {
+      yield store.set(fixtures[0].key, fixtures[0].value, 30);
+      yield store.touch(fixtures[0].key, 100);
+      var ttl = yield client.ttl.bind(client, store.key(fixtures[0].key));
+      expect(ttl).to.be.above(30);
+    })(done);
+  });
+  
+  it("should invalidate", function(done) {
+    co(function*() {
+     yield store.set(fixtures[0].key, fixtures[0].value); 
+     yield store.invalidate(fixtures[0].key);
+     var ret = yield store.get(fixtures[0].key);
+     expect(ret).not.to.be.ok;
+    })(done);
+  });
+  
 });
