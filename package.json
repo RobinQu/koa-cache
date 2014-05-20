@@ -4,7 +4,7 @@
   "description": "Redis cache for koa web service with policies",
   "main": "lib/cache.js",
   "scripts": {
-    "test": "NODE_ENV=test mocha --harmony --recursive tests/"
+    "test": "NODE_ENV=test mocha --harmony tests/"
   },
   "repository": {
     "type": "git",
@@ -28,5 +28,11 @@
     "co": "^3.0.6",
     "mocha": "^1.19.0",
     "chai": "^1.9.1"
+  },
+  "devDependencies": {
+    "koa": "^0.6.1",
+    "superagent": "^0.18.0",
+    "koa-router": "^3.1.4",
+    "thunkify": "^2.1.1"
   }
 }

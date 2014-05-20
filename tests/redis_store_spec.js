@@ -3,6 +3,7 @@
 var co = require("co"),
     expect = require("chai").expect;
 
+
 describe("RedisStore", function() {
   var wait = function(time) {
     return function(callback) {
