@@ -1,6 +1,6 @@
 # koa-cache
 
-Redis Content Cache with polcies
+Redis Content Cache with policies
 
 [![Build Status](https://travis-ci.org/RobinQu/koa-cache.svg)](https://travis-ci.org/RobinQu/koa-cache)
 
